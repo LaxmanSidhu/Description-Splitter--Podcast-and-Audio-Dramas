@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Home — QueryGen{% endblock %}
+{% block content %}
+
+<section class="cards-section">
+  <div class="container">
+    <div class="row justify-content-evenly g-4">
+      <div class="col-md-6 col-lg-5">
+        <div class="feature-card podcast-card" onclick="location.href='{{ url_for('podcasts') }}'">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                fill="currentColor" />
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Podcast Queries</h3>
+            <p class="card-description">Podcast ke queries nai mil rahe... koi bata nai. Ispe try karlo, but mai guarantee nai deta.</p>
+            <a class="card-button" href="{{ url_for('podcasts') }}">
+              <span>Start Creating</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-5">
+        <div class="feature-card audio-drama-card" onclick="location.href='{{ url_for('audio_dramas') }}'">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+                fill="currentColor" />
+            </svg>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Audio Drama Queries</h3>
+            <p class="card-description">Audio dramas ke liye query chahiye toh isme audio drama ka description daalke check karo.</p>
+            <a class="card-button" href="{{ url_for('audio_dramas') }}">
+              <span>Start Creating</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

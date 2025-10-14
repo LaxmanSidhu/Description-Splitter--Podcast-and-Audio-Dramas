@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Audio Dramas — Generator{% endblock %}
+{% block content %}
+
+<div class="container py-4">
+  <div class="row g-5">
+    <!-- Left Column: Query Generator + Results -->
+    <div class="col-lg-8 mb-4">
+      <div class="card query-card p-4 p-md-5">
+        <div class="text-center mb-4">
+          <h2 class="page-title mb-1">Audio Dramas Query Generator</h2>
+          <p class="text-muted mb-0">Generate clean search queries from your text in seconds.</p>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold" for="user_input">Enter Text / Description</label>
+          <textarea class="form-control elegant-textarea" id="user_input" placeholder="Paste your text here..." required
+            rows="6"></textarea>
+        </div>
+        <!-- Option Buttons -->
+        <div class="mb-3 text-center">
+          <h6 class="text-muted fw-semibold">Select Option</h6>
+          <div class="btn-group-container">
+            <div class="d-flex justify-content-center flex-wrap mb-2 btn-row">
+              <button class="btn option-btn btn-modern btn-outline" data-option="1word" type="button">1 Word</button>
+              <button class="btn option-btn btn-modern btn-outline" data-option="2word" type="button">2 Word</button>
+              <button class="btn option-btn btn-modern btn-outline" data-option="3word" type="button">3 Word</button>
+            </div>
+            <div class="d-flex justify-content-center flex-wrap btn-row">
+              <button class="btn option-btn btn-modern btn-outline" data-option="1word_audio" type="button">1 Word +
+                Audio Dramas</button>
+              <button class="btn option-btn btn-modern btn-outline" data-option="2word_audio" type="button">2 Word +
+                Audio Dramas</button>
+              <button class="btn option-btn btn-modern btn-outline" data-option="3word_audio" type="button">3 Word +
+                Audio Dramas</button>
+            </div>
+          </div>
+        </div>
+        <!-- Query Results Section -->
+        <div class="mt-4 results-wrapper d-none" id="results">
+          <h5 class="text-center mb-3 fw-semibold">Query Ideas</h5>
+          <div id="resultsContainer"></div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- Right Column: Saved Queries -->
+    <div class="col-lg-4">
+      <div class="sticky-top p-3" id="savedQueriesSection">
+        <h5 class="text-center mb-3 fw-semibold">Saved Queries</h5>
+        <!-- Placeholder text -->
+        <div class="text-muted text-center mb-2" id="saved-placeholder">Saved queries will appear here</div>
+        <!-- Actual saved queries list -->
+        <ul class="list-group" id="saved-list"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock %}
